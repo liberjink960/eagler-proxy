@@ -5,7 +5,7 @@ const server = http.createServer();
 const wss = new WebSocketServer({ server });
 
 wss.on("connection", (client, req) => {
-  const target = new WebSocket("ws://your-eagler-backend-ip:port");
+  const target = new WebSocket("ws://127.0.0.1:25565");
 
   client.on("message", msg => target.send(msg));
   target.on("message", msg => client.send(msg));
